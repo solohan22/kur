@@ -3,7 +3,6 @@ settings:
   backend:
     name: keras
     backend: tensorflow
-    skip_check: yes
 
 train:
   data:
