@@ -1,4 +1,9 @@
 ---
+settings:
+  backend:
+    name: keras
+    backend: tensorflow
+
 train:
   data:
     - mnist:
