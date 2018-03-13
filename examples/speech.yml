@@ -156,10 +156,9 @@ train:
   log: log
 
   optimizer:
-    name: sgd
-    nesterov: yes
-    learning_rate: 2e-4
-    momentum: 0.9
+    name: rmsprop
+    learning_rate: 0.001
+    rho: 0.9
     clip:
       norm: 100
 
