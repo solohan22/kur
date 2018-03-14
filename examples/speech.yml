@@ -80,7 +80,7 @@ settings:
   # Setting up the backend.
   backend:
     name: keras
-    backend: tensorflow
+    backend: theano
 
   # Batch sizes
   provider: &provider
