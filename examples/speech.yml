@@ -157,7 +157,7 @@ train:
 
   optimizer:
     name: rmsprop
-    learning_rate: 0.001
+    learning_rate: 0.0004
     rho: 0.9
     clip:
       norm: 100
