@@ -158,12 +158,12 @@ train:
   optimizer:
     name: sgd
     nesterov: yes
-    learning_rate: 2e-4
+    learning_rate: 0.0002
     momentum: 0.9
     clip:
       norm: 100
     # name: rmsprop
-    # learning_rate: 0.0004
+    # learning_rate: 0.0002
     # rho: 0.9
     # clip:
     #   norm: 100
