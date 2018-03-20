@@ -70,7 +70,7 @@ settings:
     kernels: 1000
     size: 11
     stride: 2
-    layers: 3
+    layers: 1
   rnn:
     size: 1000
     depth: 1
@@ -120,7 +120,7 @@ model:
             strides: "{{ cnn.stride }}"
             border: valid
         - activation: relu
-  - batch_normalization
+        - batch_normalization
 
   # A series of recurrent layers to learn temporal sequences.
   - for:
