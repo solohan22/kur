@@ -70,7 +70,7 @@ settings:
     kernels: 1000
     size: 11
     stride: 2
-    depth: 3
+    layers: 3
   rnn:
     size: 1000
     depth: 1
@@ -112,7 +112,7 @@ model:
   # One-dimensional, variable-size convolutional layers to extract more
   # efficient representation of the data.
   - for:
-      range: "{{ cnn.depth }}"
+      range: "{{ cnn.layers }}"
       iterate:
         - convolution:
             kernels: "{{ cnn.kernels }}"
@@ -120,7 +120,7 @@ model:
             strides: "{{ cnn.stride }}"
             border: valid
         - activation: relu
-        - batch_normalization
+  - batch_normalization
 
   # A series of recurrent layers to learn temporal sequences.
   - for:
