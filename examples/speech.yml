@@ -158,7 +158,7 @@ train:
   optimizer:
     name: sgd
     nesterov: yes
-    learning_rate: 2e-4
+    learning_rate: 4e-4
     momentum: 0.9
     clip:
       norm: 100
