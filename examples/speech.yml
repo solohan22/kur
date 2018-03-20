@@ -110,16 +110,13 @@ model:
 
   # One-dimensional, variable-size convolutional layers to extract more
   # efficient representation of the data.
-  - for:
-      range: "{{ cnn.layers }}"
-      iterate:
-        - convolution:
-            kernels: "{{ cnn.kernels }}"
-            size: "{{ cnn.size }}"
-            strides: "{{ cnn.stride }}"
-            border: valid
-        - activation: relu
-        - batch_normalization
+  - convolution:
+      kernels: "{{ cnn.kernels }}"
+      size: "{{ cnn.size }}"
+      strides: "{{ cnn.stride }}"
+      border: valid
+  - activation: relu
+  - batch_normalization
 
   # A series of recurrent layers to learn temporal sequences.
   - for:
