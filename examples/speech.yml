@@ -70,9 +70,10 @@ settings:
     kernels: 1000
     size: 11
     stride: 2
+    depth: 3
   rnn:
     size: 1000
-    depth: 3
+    depth: 1
   vocab:
     # Need for CTC
     size: 28
@@ -110,13 +111,16 @@ model:
 
   # One-dimensional, variable-size convolutional layers to extract more
   # efficient representation of the data.
-  - convolution:
-      kernels: "{{ cnn.kernels }}"
-      size: "{{ cnn.size }}"
-      strides: "{{ cnn.stride }}"
-      border: valid
-  - activation: relu
-  - batch_normalization
+  - for:
+      range: "{{ cnn.depth }}"
+      iterate:
+        - convolution:
+            kernels: "{{ cnn.kernels }}"
+            size: "{{ cnn.size }}"
+            strides: "{{ cnn.stride }}"
+            border: valid
+        - activation: relu
+        - batch_normalization
 
   # A series of recurrent layers to learn temporal sequences.
   - for:
