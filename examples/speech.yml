@@ -70,10 +70,9 @@ settings:
     kernels: 1000
     size: 11
     stride: 2
-    layers: 1
   rnn:
     size: 1000
-    depth: 2
+    depth: 3
   vocab:
     # Need for CTC
     size: 28
@@ -85,7 +84,7 @@ settings:
 
   # Batch sizes
   provider: &provider
-    batch_size: 16
+    batch_size: 32
     force_batch_size: yes
 
   # Where to put the data.
@@ -160,8 +159,10 @@ train:
   log: log
 
   optimizer:
-    name: adam
-    learning_rate: 0.0002
+    name: sgd
+    nesterov: yes
+    learning_rate: 2e-4
+    #momentum: 0.9
     clip:
       norm: 100
 
