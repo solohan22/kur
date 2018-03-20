@@ -156,10 +156,8 @@ train:
   log: log
 
   optimizer:
-    name: sgd
-    nesterov: yes
-    learning_rate: 4e-4
-    momentum: 0.9
+    name: adam
+    learning_rate: 5e-4
     clip:
       norm: 100
 
