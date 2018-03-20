@@ -120,7 +120,7 @@ model:
             strides: "{{ cnn.stride }}"
             border: valid
         - activation: relu
-        - batch_normalization
+  - batch_normalization
 
   # A series of recurrent layers to learn temporal sequences.
   - for:
